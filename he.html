@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+     
+</head>
+<body>
+  <script>
+  function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+var saatKac= formatAMPM(new Date);
+console.log(saatKac)
+console.log(typeof(saatKac))
+
+
+    var links = [
+    "https://youtu.be/UaDd1584sXQ?t=60","https://youtu.be/u44FvcsCNKI?t=53","https://youtu.be/Cg16C85FyEQ?t=27","https://youtu.be/UHmn1U-4ovQ?t=60"]
+    
+
+    function randomSite() {
+      if(new String(saatKac).valueOf()==new String("12:35 am".valueOf())){
+        console.log("Yeni Gün Yeni İloş")
+        var num = Math.floor(Math.random() * (links.length));
+        location.href = links[num];
+        
+      }
+      else{
+        console.log("Hala Aynı Gündeyiz :')")
+      }
+        
+    }
+</script>
+<div class="image-container">
+  <div class="video-wrapper">
+    <span class="video-play-button">
+    <a class="popup-youtube" href="https://youtu.be/u44FvcsCNKI?t=53" onclick="randomSite();">
+      <img src="images/play-button.png"  width="150px" height="150px"></span>
+      </span>
+    </a>
+</div> 
+
+
+    
+
+
+</html>

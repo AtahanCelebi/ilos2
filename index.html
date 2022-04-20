@@ -49,7 +49,15 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW9R5KRTLC"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
+	gtag('config', 'G-KW9R5KRTLC');
+	</script>
 	</head>
 	<body>
 	<header role="banner" id="fh5co-header">
@@ -76,6 +84,56 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<h1 class="to-animate">İlayda Nur Tekeli</h1>
+								<a href="https://tiyatrolar.com.tr/ilayda-nur-tekeli"><p>Tiyatroyu severim.</p></a>
+
+								<h3>8 Saniyede Bir Doz</h3>
+								<!--<input type="button" onClick="displayImg()" value="Display Random Image">-->
+								<label id="minutes">00</label>:<label id="seconds">00</label>
+									<br>
+								<div style="width:400px;margin:0 auto;height">
+									<img src="images/muho.gif" name="canvas">
+								</div>	
+								</body>
+								<script>
+									var imgArr = [];
+									for (let i = 1; i < 166; i++) {
+									imgArr.push(i+'.JPG')
+								}
+								
+								
+								
+								var minutesLabel = document.getElementById("minutes");
+								var secondsLabel = document.getElementById("seconds");
+								var totalSeconds = 0;
+								setInterval(setTime, 996);
+								
+								function setTime() {
+								  ++totalSeconds;
+								  secondsLabel.innerHTML = pad(totalSeconds % 60);
+								  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+								  if(totalSeconds==8){
+									var num = Math.floor(Math.random() * (imgArr.length));
+									document.canvas.src="img/"+imgArr[num];
+									totalSeconds = 0;
+								  }
+								}
+								
+								function pad(val) {
+								  var valString = val + "";
+								  if (valString.length < 2) {
+									return "0" + valString;
+								  } else {
+									return valString;
+								  }
+								}
+								
+								
+								///function displayImg(){
+									///var num = Math.floor(Math.random() * (imgArr.length));
+									///document.canvas.src="img/"+imgArr[num];
+								///}
+								</script>
+
 						</div>
 					</div>
 				</div>
@@ -91,7 +149,7 @@
 					<h2 class="to-animate">Dünyanın 8. Harikası:</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>İloş</h3>
+							<h3><a href="https://www.instagram.com/ilaydanurtekeli/?hl=tr">İloş</a></h3>
 						</div>
 					</div>
 				</div>
@@ -101,17 +159,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<div class="project-grid to-animate-2" style="background-image:  url(images/project-1.jpg);">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-1.jpg);">
 							<div class="desc">
-								<h3><a href="#">05.05.1997</a></h3>
+								<h3>05.05.1997</h3>
 								<span>:)</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12 text-center">
-						<div class="project-grid to-animate-2" style="background-image:  url(images/project-2.jpg);">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-2.jpg);">
 							<div class="desc">
-								<h3><a href="#">09.02.2020</a></h3>
+								<h3>09.02.2020</h3>
 								<span>Kotor</span>
 							</div>
 						</div>
@@ -120,9 +178,9 @@
 						
 					</div>
 					<div class="col-md-12 text-center">
-						<div class="project-grid to-animate-2" style="background-image:  url(images/project-4.jpg);">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-4.jpg);">
 							<div class="desc">
-								<h3><a href="#">Hacettepe Üniversitesi</a></h3>
+								<h3>Hacettepe Üniversitesi</h3>
 								<span>22.10.2021</span>
 							</div>
 						</div>
@@ -130,7 +188,7 @@
 					<div class="col-md-12 text-center">
 						<div class="project-grid to-animate-2" style="background-image:  url(images/project-5.jpg);">
 							<div class="desc">
-								<h3><a href="#">Batıkent</a></h3>
+								<h3>Batıkent</h3>
 								<span>29.01.2022</span>
 							</div>
 						</div>
@@ -188,14 +246,48 @@
 					</div>
 				</div>
 			</div>
-			<div class="image-container">
+			<script>
+				function formatAMPM(date) {
+				var hours = date.getHours();
+				var minutes = date.getMinutes();
+				var ampm = hours >= 12 ? 'pm' : 'am';
+				hours = hours % 12;
+				hours = hours ? hours : 12; // the hour '0' should be '12'
+				minutes = minutes < 10 ? '0'+minutes : minutes;
+				var strTime = hours + ':' + minutes + ' ' + ampm;
+				return strTime;
+			  }
+			  
+			  var saatKac= formatAMPM(new Date);
+			  console.log(saatKac)
+			  console.log(typeof(saatKac))
+			  
+			  
+				  var links = [
+				  "https://youtu.be/UaDd1584sXQ?t=60","https://youtu.be/u44FvcsCNKI?t=53","https://youtu.be/Cg16C85FyEQ?t=27","https://youtu.be/UHmn1U-4ovQ?t=60"]
+				  
+			  
+				  function randomSite() {
+					if(new String(saatKac).valueOf()==new String("12:40 am".valueOf())){
+					  console.log("Yeni Gün Yeni İloş")
+					  var num = Math.floor(Math.random() * (links.length));
+					  location.href = links[num];
+					  
+					}
+					else{
+					  console.log("Hala Aynı Gündeyiz :')")
+					}
+					  
+				  }
+			  </script>
+			  <div class="image-container">
 				<div class="video-wrapper">
-					<span class="video-play-button">
-					<a class="popup-youtube" href="https://youtu.be/wOYu07BDTuw?t=21">
-						<img src="images/play-button.png"  width="150px" height="150px"></span>
-						</span>
-					</a>
-			</div> 
+				  <span class="video-play-button">
+				  <a class="popup-youtube" href="#" onclick="randomSite();">
+					<img src="images/play-button.png"  width="150px" height="150px"></span>
+					</span>
+				  </a>
+			  </div> 
 			<style>
 			.image-container {
 				display: flex;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+     
+</head>
+<body>
+    <!--<input type="button" onClick="displayImg()" value="Display Random Image">-->
+    <img src="img/3.jpg" name="canvas">
+<label id="minutes">00</label>:<label id="seconds">00</label>
+
+</body>
+<script>
+    var imgArr = [];
+    for (let i = 1; i < 166; i++) {
+    imgArr.push(i+'.jpg')
+}
+
+
+
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+  if(totalSeconds==5){
+    var num = Math.floor(Math.random() * (imgArr.length));
+    document.canvas.src="img/"+imgArr[num];
+    totalSeconds = 0;
+  }
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+
+///function displayImg(){
+    ///var num = Math.floor(Math.random() * (imgArr.length));
+    ///document.canvas.src="img/"+imgArr[num];
+///}
+</script>
+
+</html>
