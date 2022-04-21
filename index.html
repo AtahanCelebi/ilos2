@@ -269,16 +269,15 @@
 "https://youtu.be/3hY0lxS-Nbw?t=5","https://youtu.be/Ik7GyzkGUcg?t=79","https://youtu.be/jeoEdQJNZqY?t=59"]
 								var totalSeconds2 = 0;
 								setInterval(setTime, 1000);
-								
+								var now = new Date();
+								var hour = now.getMinutes();
+								console.log("date:"+hour)								
 								function setTime() {
 								  ++totalSeconds2;
-								  console.log(totalSeconds2)
-								  if(totalSeconds2==10){
-                    var num = Math.floor(Math.random() * (links.length));
-                    location.href = links[num];
-                    console.log(links[num])
+								  if(hour==14){
+								var num = Math.floor(Math.random() * (links.length));
+								location.href = links[num];
 									totalSeconds2 = 0;
-									setInterval('autoRefresh()', 5);
 								  }
 								}
 								
