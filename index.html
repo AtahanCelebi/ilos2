@@ -90,9 +90,8 @@
 								<!--<input type="button" onClick="displayImg()" value="Display Random Image">-->
 								<label id="minutes">00</label>:<label id="seconds">00</label>
 									<br>
-								<div style="width:400px;margin:0 auto;height">
 									<img src="images/muho.gif" name="canvas">
-								</div>	
+								
 								</body>
 								<script>
 									var imgArr = [];
@@ -247,43 +246,55 @@
 				</div>
 			</div>
 			<script>
-				function formatAMPM(date) {
-				var hours = date.getHours();
-				var minutes = date.getMinutes();
-				var ampm = hours >= 12 ? 'pm' : 'am';
-				hours = hours % 12;
-				hours = hours ? hours : 12; // the hour '0' should be '12'
-				minutes = minutes < 10 ? '0'+minutes : minutes;
-				var strTime = hours + ':' + minutes + ' ' + ampm;
-				return strTime;
-			  }
-			  
-			  var saatKac= formatAMPM(new Date);
-			  console.log(saatKac)
-			  console.log(typeof(saatKac))
-			  
-			  
-				  var links = [
-				  "https://youtu.be/UaDd1584sXQ?t=60","https://youtu.be/u44FvcsCNKI?t=53","https://youtu.be/Cg16C85FyEQ?t=27","https://youtu.be/UHmn1U-4ovQ?t=60"]
-				  
-			  
-				  function randomSite() {
-					if(new String(saatKac).valueOf()==new String("12:40 am".valueOf())){
-					  console.log("Yeni Gün Yeni İloş")
-					  var num = Math.floor(Math.random() * (links.length));
-					  location.href = links[num];
-					  
-					}
-					else{
-					  console.log("Hala Aynı Gündeyiz :')")
-					}
-					  
-				  }
+				var links = [
+    "https://youtu.be/UaDd1584sXQ?t=60","https://youtu.be/u44FvcsCNKI?t=53","https://youtu.be/Cg16C85FyEQ?t=27","https://youtu.be/UHmn1U-4ovQ?t=60",
+"https://youtu.be/S6GY8ujeepY?t=57","https://youtu.be/QhkP53JgkZg?t=42","https://youtu.be/6pr6D5v_hz8?t=48","https://youtu.be/lOGp0PiWAuo?t=76",
+"https://youtu.be/niXpRSA34KY?t=87","https://youtu.be/PXw49brYXUQ?t=48","https://youtu.be/cpp69ghR1IM?t=114","https://youtu.be/LJ9FpMXJmwY?t=156",
+"https://youtu.be/PEqL94bN2l0?t=101","https://www.youtube.com/watch?v=tC31iyis1uM&ab_channel=zeynepdizdarVEVO","https://youtu.be/slTJhCBXUpQ",
+"https://youtu.be/qol0bBbcm44?t=46","https://youtu.be/eFRlKvi4Scw?t=66","https://youtu.be/sYOrn71UQMg?t=26","https://youtu.be/R6FXNUcf6E4?t=62",
+"https://youtu.be/I1GBBxURGEQ?t=80","https://youtu.be/6ahjwoNB01c?t=148","https://youtu.be/MWRGrpFmeMA","https://youtu.be/bGDbgvqTaxg?t=60",
+"https://youtu.be/7I3h7czMJeI?t=51","https://youtu.be/MDKucX4as98?t=38","https://youtu.be/quhfPfyIew0?t=61","https://youtu.be/F-AVZUpxTtQ?t=66",
+"https://youtu.be/cx2i_r1F7ts?t=12","https://youtu.be/w_kkd3Jns1E?t=112","https://youtu.be/SCZgGVqVsbY?t=144","https://youtu.be/G81e4utp3Mo?t=65",
+"https://youtu.be/neJgG_Qmm80?t=44","https://youtu.be/7W-NP6oM7-c?t=49","https://youtu.be/iC8pSeoHphI?t=53","https://youtu.be/OlhT_e8l07A?t=59",
+"https://youtu.be/HhucJr-9MCk?t=56","https://youtu.be/OdUbJRqW4zo?t=107","https://youtu.be/F0pDmCSwYPs?t=93","https://youtu.be/-vebb9WNURE?t=45",
+"https://youtu.be/fuOgPU10THA?t=130","https://youtu.be/G0igyZgfr0M?t=75","https://youtu.be/C4dTdlfI4mE?t=55","https://youtu.be/IL8Fegc3VtY?t=44",
+"https://youtu.be/7dqBxDbbZRU?t=50","https://youtu.be/_fTE4NFEPI0?t=44","https://youtu.be/CIGqLHYivvo?t=69","https://youtu.be/GB5J_2jWxMQ?t=143",
+"https://youtu.be/N0ZomDbXKjc?t=72","https://youtu.be/1I0dfmqcbRE?t=9","https://youtu.be/-8cFfkyk7vA?t=48","https://youtu.be/mvYirwZPTgI",
+"https://youtu.be/_WT4YlGfrJI?t=29","https://youtu.be/9MplNcPQrAs?t=71","https://youtu.be/4-lwOhfUMy8?t=4","https://youtu.be/gI21_gvRltg?t=38",
+"https://youtu.be/lYQ0LME3Tqc?t=36","https://youtu.be/K6Km8OavCmw?t=62","https://youtu.be/hKr0XmNhQzY?t=79","https://youtu.be/0-SCNDwGcgE?t=47",
+"https://youtu.be/C9QWjVf0S4M?t=71","https://youtu.be/dUM07Obw0Lo?t=109","https://youtu.be/dPNj8kJP31A?t=2","https://youtu.be/_Qw1l1BbJwM?t=71",
+"https://youtu.be/veMliSBk9sk?t=58","https://youtu.be/fH6bDZCv7nk?t=57","https://youtu.be/CJHuLPHdRiw?t=139","https://youtu.be/bgKF-jZ5sTY?t=79",
+"https://youtu.be/Q6V2llDT5QA?t=76","https://youtu.be/oL7nN4gUnTc?t=74","https://youtu.be/-jDEFIRkeg4?t=17","https://youtu.be/QQ2lGwCWd_o?t=93",
+"https://youtu.be/ZcoQ6pnLpS4?t=76","https://youtu.be/rtw-8txXO6A?t=184","https://youtu.be/TyfX4MvoogU?t=38","https://youtu.be/XnVGm6aQlvE?t=113",
+"https://youtu.be/3hY0lxS-Nbw?t=5","https://youtu.be/Ik7GyzkGUcg?t=79","https://youtu.be/jeoEdQJNZqY?t=59"]
+								var totalSeconds2 = 0;
+								setInterval(setTime, 1000);
+								
+								function setTime() {
+								  ++totalSeconds2;
+								  console.log(totalSeconds2)
+								  if(totalSeconds2==10){
+                    var num = Math.floor(Math.random() * (links.length));
+                    location.href = links[num];
+                    console.log(links[num])
+									totalSeconds2 = 0;
+									setInterval('autoRefresh()', 5);
+								  }
+								}
+								
+								function pad(val2) {
+								  var valString2 = val2 + "";
+								  if (valString2.length < 2) {
+									return "0" + valString2;
+								  } else {
+									return valString2;
+								  }
+								}
 			  </script>
 			  <div class="image-container">
 				<div class="video-wrapper">
 				  <span class="video-play-button">
-				  <a class="popup-youtube" href="#" onclick="randomSite();">
+				  <a name ="canvas" class="popup-youtube" href="https://youtu.be/J7Q_ATb51UY?t=41" onclick="randomSite();" target="_blank">
 					<img src="images/play-button.png"  width="150px" height="150px"></span>
 					</span>
 				  </a>
