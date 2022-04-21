@@ -270,11 +270,12 @@
 								var totalSeconds2 = 0;
 								setInterval(setTime, 1000);
 								var now = new Date();
-								var hour = now.getMinutes();
-								console.log("date:"+hour)								
+								var hour = now.getHours();
+								var minutes = now.getMinutes();
+								var thesecond= now.getSeconds();
 								function setTime() {
 								  ++totalSeconds2;
-								  if(hour==14){
+								  if(hour == 1 && minutes == 19 && thesecond==0){
 								var num = Math.floor(Math.random() * (links.length));
 								location.href = links[num];
 									totalSeconds2 = 0;
